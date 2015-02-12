@@ -6,7 +6,7 @@
  * Licensed under the MIT license.
  * http://handsontable.com/
  *
- * Date: Thu Feb 05 2015 11:24:27 GMT+0100 (CET)
+ * Date: Thu Feb 12 2015 14:39:25 GMT-0500 (EST)
  */
 /*jslint white: true, browser: true, plusplus: true, indent: 4, maxerr: 50 */
 
@@ -1481,7 +1481,7 @@ Handsontable.Core = function (rootElement, userSettings) {
       /* jshint -W089 */
       for (i in settings.cell) {
         var cell = settings.cell[i];
-        instance.setCellMetaObject(cell.row, cell.col, cell);
+        if (cell) { instance.setCellMetaObject(cell.row, cell.col, cell); }
       }
     }
 
@@ -2385,7 +2385,7 @@ Handsontable.Core = function (rootElement, userSettings) {
   /**
    * Handsontable version
    */
-  this.version = '0.12.5'; //inserted by grunt from package.json
+  this.version = '@@version'; //inserted by grunt from package.json
 };
 
 var DefaultSettings = function () {};
